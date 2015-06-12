@@ -1,4 +1,6 @@
-
+/* 검색할 정규식 패턴을 라인 단위로 입력한 문서 바탕으로
+*  지정된 경로상의 문서에서 정규식으로 조회해 위치를 콘솔로 출력해줍니다.
+*/
 var glob = require('glob');
 var fs = require('fs');
 var bufStr = null;
