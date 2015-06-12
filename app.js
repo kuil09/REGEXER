@@ -1,4 +1,4 @@
-//참조링크 :ㅓ http://jesusjzp.github.io/blog/2014/04/15/nodejs-read-file/
+//참조링크 : http://jesusjzp.github.io/blog/2014/04/15/nodejs-read-file/
 
 var fs = require('fs');
 
