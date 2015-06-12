@@ -55,6 +55,7 @@ var searchLine = function (regexArr, lineArr) {
 	}
 }
 
+//기본 값으로 app.js가 있는 동일 경로상의 txt 파일만 찾게 끔 해놨습니다. 그 외의 건에 맞게끔 수정하시면 됩니다.
 glob( __dirname + "/*.txt", function (er, files) {
 
 	dir = files;			//1. glob을 통해서 디렉토리에 파일 경로들 다 받아온다.
