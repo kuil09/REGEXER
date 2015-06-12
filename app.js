@@ -9,7 +9,8 @@ var dir = [];
 //정규식 패턴 생성을 위함
 var buildRegex = function (curArray) {
 	for(i=0; curArray.length > i; i++) {
-		curArray[i] = new RegExp(curArray[i].replace(/[\n\r]/g, ''), 'gi');	//읽어 온 변수에서 캐리지 리턴 값을 없애 정규식 생성
+		//읽어 온 변수에서 캐리지 리턴 값을 없애 정규식 생성
+		curArray[i] = new RegExp(curArray[i].replace(/[\n\r]/g, ''), 'gi');
 	}
 }
 
@@ -22,7 +23,7 @@ var readPattern = function() {
 
 		bufStr = data.toString();
 		regexArr = bufStr.split('\n');		//이때는 단순한 문자 배열
-		buildRegex(regexArr);				//이제는 정규식을 포함한 배열
+		buildRegex(regexArr);			//이제부턴 정규식 배열
 		
 	});
 }
@@ -53,13 +54,14 @@ var searchLine = function (regexArr, lineArr) {
 }
 
 glob( __dirname + "/*.txt", function (er, files) {
-	dir = files;
 
-	readPattern();
+	dir = files;			//1. glob을 통해서 디렉토리에 파일 경로들 다 받아온다.
 
-	for(k=0; dir.length > k; k++) {
-	searchFile(dir[k]);
-}
+	readPattern();			//2. 사전에 정의된 정규식 패턴 파일을 읽는다.
+
+	for(k=0; dir.length > k; k++) {	
+		searchFile(dir[k]);	//3. 가져온 경로 별로 내용을 정규식과 비교해본다. 
+	}
 });
 
 
