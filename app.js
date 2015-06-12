@@ -1,5 +1,5 @@
 /* 검색할 정규식 패턴을 라인 단위로 입력한 문서 바탕으로
-*  지정된 경로상의 문서에서 정규식으로 조회해 위치를 콘솔로 출력해줍니다.
+*  지정된 경로상의 문서에서 정규식으로 조회해 위치를 콘솔로 출력
 */
 var glob = require('glob');
 var fs = require('fs');
@@ -55,15 +55,15 @@ var searchLine = function (regexArr, lineArr) {
 	}
 }
 
-//기본 값으로 app.js가 있는 동일 경로상의 txt 파일만 찾게 끔 해놨습니다. 그 외의 건에 맞게끔 수정하시면 됩니다.
+//기본 값으로 app.js가 있는 동일 경로상의 txt 파일만 찾게 끔 해놨습니다. 그 외의 건에 맞게끔 수정
 glob( __dirname + "/*.txt", function (er, files) {
 
-	dir = files;			//1. glob을 통해서 디렉토리에 파일 경로들 다 받아온다.
+	dir = files;			//1. glob을 통해서 적합한 파일 경로 배열 전체 획득
 
-	readPattern();			//2. 사전에 정의된 정규식 패턴 파일을 읽는다.
+	readPattern();			//2. 사전에 정의된 정규식 패턴 파일을 읽기
 
 	for(k=0; dir.length > k; k++) {	
-		searchFile(dir[k]);	//3. 가져온 경로 별로 내용을 정규식과 비교해본다. 
+		searchFile(dir[k]);	//3. 가져온 경로 별로 내용을 정규식과 비교
 	}
 });
 
