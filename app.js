@@ -1,12 +1,21 @@
-//아래 부분은 여기서 참조 해왔습니다. http://stackoverflow.com/questions/9890473/nodejs-load-file
-var fs = require('fs'); //파일 시스템 모듈을 사용하겠다는 의미입니다.
+//참조링크 :ㅓ http://jesusjzp.github.io/blog/2014/04/15/nodejs-read-file/
 
-//아래 readFile의 파라미터는 파일 경로 + 파일명, 콜백이 되겠습니다. 
-fs.readFile( __dirname + '/test.txt', function (err, data) {  //__dirname은 노드에서 제공하는 글로벌 변수입니다.
-	if (err) {  //에러 발생 시 throw를 해줍니다. JS도 예외 처리가 가능합니다. 
+var fs = require('fs');
+
+var bufferString;	
+var bufferStringArr;	
+
+
+fs.readFile( __dirname + '/test.txt', function (err, data) {
+	if (err) {  
 		throw err;
 	}
-	console.log(data.toString()); //파일 내용을 출력합니다.
+	
+	bufferString = data.toString();			//텍스트 문서를 변수에 담습니다.
+	bufferStringArr = bufferString.split('\n');	//변수 내용을 개행문자 기준으로 나누어 배열에 담게 됩니다.
+	
+	console.log(bufferStringSplit);
+
 });
 
 
