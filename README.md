@@ -1,13 +1,11 @@
 # TUTORIALS
 Node.JS 셀프 스터디의 일환으로 만든 정규식 데이터 조회 도구 입니다.
 
-사용법
-실행명령 node regexer.js
+# 사용법
+node regexer.js
 
+#regexer.js에서 아래 내용을 기호에 맞게 수정하신 후 사용하시면 됩니다. 
 
-아래 내용을 기호에 맞게 수정하신 후 사용하시면 됩니다. 
-
-regexer.js에서
 1. 4 라인
   var wstream = fs.createWriteStream('matched.csv'); 
   조회 결과가 저장될 파일명을 'matched.csv'에서 원하는 파일명으로 변경하시기 바랍니다. (포맷 변경은 하지 마세요.)
