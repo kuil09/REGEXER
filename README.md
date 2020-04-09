@@ -1,4 +1,4 @@
-# TUTORIALS
+# README
 Node.JS 셀프 스터디의 일환으로 만든 정규식 데이터 조회 도구 입니다.
 
 # 사용법
